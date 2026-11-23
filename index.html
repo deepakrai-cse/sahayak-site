@@ -1,0 +1,1244 @@
+<!doctype html>
+<html lang="en-IN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Sahayak Studio — Resumes, data entry and event sites at fixed prices</title>
+  <meta name="description"
+    content="A small team in India making Resumes, typing up data, building event websites and running events. See the price before you ask.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+  <style>
+    :root {
+      --ink: #142247;
+      --paper: #f8fafc;
+      --bg: #edf0f4;
+      --saffron: #f5a227;
+      --on-saffron: #142247;
+      --teal: #0f6a6a;
+      --muted: #4f5b70;
+      --line: #c9d0db;
+      --soft: #e2e7ee;
+      --danger: #b3261e;
+      --btn: var(--ink);
+      --on-btn: #f8fafc;
+      --ring: var(--ink);
+      --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --body: "Karla", "Helvetica Neue", Arial, system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e6eaf2;
+        --paper: #1b2438;
+        --bg: #121a2b;
+        --saffron: #f7ac3c;
+        --on-saffron: #121a2b;
+        --teal: #8fd3cf;
+        --muted: #aab3c4;
+        --line: #344059;
+        --soft: #252f46;
+        --danger: #ff8a80;
+        --btn: var(--saffron);
+        --on-btn: #121a2b;
+        --ring: var(--saffron);
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 1.0625rem/1.6 var(--body);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--ring);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    [id] {
+      scroll-margin-top: 5.5rem;
+    }
+
+    .wrap {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .wrap {
+        padding: 0 1.5rem;
+      }
+    }
+
+    .teal {
+      color: var(--teal);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 100;
+      background: var(--saffron);
+      color: var(--on-saffron);
+      padding: .6rem 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+
+    .skip:focus {
+      top: calc(.75rem + env(safe-area-inset-top));
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      font: 700 1rem var(--body);
+      border-radius: 6px;
+      padding: .65rem 1.25rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background: var(--btn);
+      color: var(--on-btn);
+      text-decoration: none;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-sm {
+      padding: .35rem .9rem;
+      font-size: .9rem;
+    }
+
+    .btn-lg {
+      padding: .9rem 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .btn-accent {
+      background: var(--saffron);
+      color: var(--on-saffron);
+      border-color: var(--ink);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn-link {
+      background: none;
+      border: 0;
+      padding: 0;
+      color: var(--ink);
+      font-size: .9rem;
+      text-decoration: underline 2px var(--saffron);
+      text-underline-offset: 4px;
+    }
+
+    .full {
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--bg);
+      border-bottom: 2px solid var(--ink);
+      padding-top: env(safe-area-inset-top);
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font: 800 1.25rem var(--display);
+      text-decoration: none;
+    }
+
+    .logo span {
+      display: grid;
+      place-items: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border: 2px solid var(--ink);
+      background: var(--saffron);
+      color: var(--on-saffron);
+      border-radius: .9rem .2rem .9rem .2rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline 2px var(--saffron);
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 767px) {
+      nav {
+        display: none;
+      }
+    }
+
+    .who {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 4rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4.1rem);
+      font-weight: 800;
+    }
+
+    .hero .lede {
+      margin-top: 1.5rem;
+      max-width: 32rem;
+      font-size: 1.125rem;
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      max-width: 28rem;
+      border-left: 4px solid var(--saffron);
+      padding-left: 1rem;
+      font-size: .9rem;
+      color: var(--teal);
+    }
+
+    /* Calculator card: thick border, lopsided corners, solid saffron offset shadow */
+    .card {
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: 1.75rem .375rem 1.75rem .375rem;
+      box-shadow: 8px 8px 0 0 var(--saffron);
+      padding: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .card {
+        padding: 1.75rem;
+      }
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .tabs {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .tab {
+      font: 700 .9rem/1.2 var(--body);
+      padding: .55rem .4rem;
+      border-radius: 6px;
+      border: 2px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .tab:hover {
+      border-color: var(--ink);
+    }
+
+    .tab[aria-selected="true"] {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+
+    .row label {
+      font-weight: 700;
+    }
+
+    .row output {
+      font: 700 1.125rem var(--display);
+    }
+
+    input[type=range] {
+      appearance: none;
+      width: 100%;
+      height: 2.25rem;
+      background: transparent;
+      cursor: pointer;
+      margin: .25rem 0 0;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 99px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+
+    input[type=range]::-moz-range-track {
+      height: 6px;
+      border-radius: 99px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      margin-top: -11px;
+      border-radius: 99px;
+      background: var(--saffron);
+      border: 3px solid var(--ink);
+    }
+
+    input[type=range]::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 99px;
+      background: var(--saffron);
+      border: 3px solid var(--ink);
+    }
+
+    .ticks {
+      display: flex;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    .detail {
+      margin-top: .5rem;
+      font-size: .9rem;
+      color: var(--teal);
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 2px dashed var(--line);
+    }
+
+    .result small {
+      display: block;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .price {
+      font: 800 3rem/1.1 var(--display);
+      letter-spacing: -0.02em;
+    }
+
+    .eta {
+      margin-top: .25rem;
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    .card .btn-accent {
+      margin-top: 1.5rem;
+    }
+
+    /* Sections */
+    section.block {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    @media (min-width: 640px) {
+      section.block {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+    }
+
+    .block h2 {
+      font-size: clamp(2.25rem, 5vw, 3rem);
+      font-weight: 800;
+    }
+
+    .ruled {
+      list-style: none;
+      margin: 2.5rem 0 0;
+      padding: 0;
+      border-top: 2px solid var(--ink);
+    }
+
+    .ruled li {
+      display: grid;
+      gap: .5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (min-width: 640px) {
+      .ruled li {
+        grid-template-columns: 14rem 1fr auto;
+        gap: 2rem;
+        align-items: baseline;
+      }
+    }
+
+    .ruled h3 {
+      font-size: 1.5rem;
+    }
+
+    .ruled p {
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .ruled .cost {
+      font: 700 1.125rem var(--display);
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    @media (min-width: 640px) {
+      .ruled .cost {
+        text-align: right;
+      }
+    }
+
+    .band {
+      background: var(--paper);
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .steps {
+      list-style: none;
+      margin: 2.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .steps li {
+      display: flex;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .steps li {
+        display: block;
+      }
+
+      .steps h3 {
+        margin-top: 1rem;
+      }
+    }
+
+    .num {
+      font: 800 3.75rem/1 var(--display);
+      color: var(--saffron);
+      -webkit-text-stroke: 2px var(--ink);
+    }
+
+    .steps h3 {
+      font-size: 1.25rem;
+    }
+
+    .steps p {
+      margin-top: .5rem;
+      color: var(--muted);
+    }
+
+    .faq {
+      max-width: 48rem;
+    }
+
+    .qa {
+      margin-top: 2.5rem;
+      border-top: 2px solid var(--ink);
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      font-weight: 700;
+      font-size: 1.125rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: transform .15s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    details p {
+      padding: 0 2.5rem 1.25rem 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--paper);
+      border-top: 2px solid var(--ink);
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1.3fr;
+      }
+    }
+
+    .contact dl {
+      margin: 2rem 0 0;
+    }
+
+    .contact dt {
+      font-size: .9rem;
+      color: var(--teal);
+    }
+
+    .contact dd {
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+
+    .field {
+      margin-bottom: 1.25rem;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: .35rem;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--ink);
+      background: var(--paper);
+      border: 2px solid #8a95a8;
+      border-radius: 8px;
+      padding: .65rem .8rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      .field input,
+      .field select,
+      .field textarea {
+        border-color: #4a5672;
+      }
+    }
+
+    .field textarea {
+      min-height: 9rem;
+      resize: vertical;
+    }
+
+    .field [aria-invalid="true"] {
+      border-color: var(--danger);
+    }
+
+    .err {
+      margin-top: .35rem;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--danger);
+    }
+
+    .err:empty {
+      display: none;
+    }
+
+    .hint {
+      margin-top: .35rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .thanks {
+      align-self: start;
+    }
+
+    .thanks h3 {
+      font-size: 1.9rem;
+    }
+
+    .thanks p {
+      margin-top: .75rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 2px solid var(--ink);
+      padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    }
+
+    .foot {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      padding-top: 2rem;
+      font-size: .9rem;
+    }
+
+    @media (min-width: 640px) {
+      .foot {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    dialog {
+      width: min(26rem, calc(100vw - 2rem));
+      max-height: calc(100dvh - 2rem);
+      overflow-y: auto;
+      color: var(--ink);
+      padding: 0;
+    }
+
+    dialog::backdrop {
+      background: rgba(10, 18, 40, .55);
+    }
+
+    dialog .inner {
+      padding: 1.5rem;
+    }
+
+    .dhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .dhead h2 {
+      font-size: 1.9rem;
+    }
+
+    .x {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .dsub {
+      margin: .5rem 0 1.5rem;
+      font-size: .9rem;
+      color: var(--teal);
+    }
+
+    .switch {
+      margin-top: 1.25rem;
+      font-size: .9rem;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap bar">
+      <a class="logo" href="#top"><span aria-hidden="true">स</span>Sahayak Studio</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="auth-out"><button class="btn btn-sm" type="button" id="open-login">Log in</button></div>
+      <div id="auth-in" class="who" hidden><span id="hi"></span><button class="btn btn-outline btn-sm" type="button"
+          id="logout">Log out</button></div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="top" class="wrap hero">
+      <div>
+        <h1>Resumes, spreadsheets and event sites, finished by a real person.</h1>
+        <p class="lede">We're a small team in India doing the careful, fiddly jobs people put off. You see the price up
+          front, talk to the person doing the work, and get it back on the day we promised.</p>
+        <p class="note">These prices are a starting point. If your job is unusual, we'll confirm the final price before
+          any work begins.</p>
+      </div>
+
+      <section class="card" aria-labelledby="calc-title">
+        <h2 id="calc-title">Work out your price</h2>
+        <div class="tabs" role="tablist" aria-label="Service" id="tabs"></div>
+        <div role="tabpanel" id="calc-panel">
+          <div class="row"><label for="slider" id="slider-label">Package</label><output id="slider-value"
+              for="slider"></output></div>
+          <input type="range" id="slider">
+          <div class="ticks" id="ticks" aria-hidden="true"></div>
+          <p class="detail" id="detail"></p>
+          <div class="result" aria-live="polite">
+            <small>Estimated price</small>
+            <p class="price" id="price"></p>
+            <p class="eta" id="eta"></p>
+          </div>
+          <button class="btn btn-accent btn-lg full" type="button" id="ask">Ask for this</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="services" class="wrap block" aria-labelledby="services-title">
+      <h2 id="services-title">What we do</h2>
+      <p class="teal" style="margin-top:.75rem">Four services, each with a price you can see before you ask.</p>
+      <ul class="ruled" id="service-list"></ul>
+    </section>
+
+    <section id="how" class="band" aria-labelledby="how-title">
+      <div class="wrap block">
+        <h2 id="how-title">How an order goes</h2>
+        <ol class="steps">
+          <li><span class="num" aria-hidden="true">1</span>
+            <div>
+              <h3>Tell us what you need</h3>
+              <p>Use the form or the calculator. A few lines is enough, and you can attach files later.</p>
+            </div>
+          </li>
+          <li><span class="num" aria-hidden="true">2</span>
+            <div>
+              <h3>We confirm the price and date</h3>
+              <p>Within one working day we reply with the final price and a delivery date. Nothing starts until you say
+                yes.</p>
+            </div>
+          </li>
+          <li><span class="num" aria-hidden="true">3</span>
+            <div>
+              <h3>Review and revise</h3>
+              <p>You see a draft, tell us what to change, and we fix it. You pay once you're happy with it.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faq" class="wrap block faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions people ask</h2>
+      <div class="qa">
+        <details>
+          <summary>What happens to my documents and data?</summary>
+          <p>Only the person working on your order sees your files. We delete them 30 days after delivery, or sooner if
+            you ask. We never share or sell anything you send us.</p>
+        </details>
+        <details>
+          <summary>How many revisions do I get?</summary>
+          <p>Two rounds of changes are included with every order. Small fixes after that, like a typo or a phone number,
+            are free. Bigger rewrites are quoted before we start.</p>
+        </details>
+        <details>
+          <summary>How do I pay?</summary>
+          <p>UPI or bank transfer. For Resumes and data entry you pay after you approve the work. For event websites and
+            event management we ask for half up front and half on delivery.</p>
+        </details>
+        <details>
+          <summary>I need it by tomorrow. Can you help?</summary>
+          <p>Often, yes. Tell us your deadline in the form and we'll reply honestly about whether we can make it. If it
+            means working late, we tell you any extra cost before we start.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="wrap block contact-grid">
+        <div>
+          <h2 id="contact-title">Ask us anything</h2>
+          <p class="muted" style="margin-top:1rem;max-width:24rem">Tell us what you need and when. We reply within one
+            working day with a final price and a date.</p>
+          <dl>
+            <dt>Email</dt>
+            <dd>hello@sahayak.studio</dd>
+            <dt>Hours</dt>
+            <dd>Monday to Saturday, 10 am to 7 pm IST</dd>
+            <dt>Where we are</dt>
+            <dd>A small team working remotely across India</dd>
+          </dl>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="field"><label for="c-name">Your name</label><input id="c-name" autocomplete="name" maxlength="80"
+              aria-describedby="c-name-err">
+            <p class="err" id="c-name-err"></p>
+          </div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" inputmode="email"
+              autocomplete="email" maxlength="255" aria-describedby="c-email-err">
+            <p class="err" id="c-email-err"></p>
+          </div>
+          <div class="field"><label for="c-service">Service</label><select id="c-service"
+              aria-describedby="c-service-err">
+              <option value="">Choose one</option>
+            </select>
+            <p class="err" id="c-service-err"></p>
+          </div>
+          <div class="field"><label for="c-details">What do you need, and by when?</label><textarea id="c-details"
+              maxlength="2000" aria-describedby="c-details-err"></textarea>
+            <p class="err" id="c-details-err"></p>
+          </div>
+          <button class="btn btn-lg" type="submit">Send message</button>
+        </form>
+
+        <div class="card thanks" id="thanks" role="status" tabindex="-1" hidden>
+          <h3 id="thanks-title"></h3>
+          <p id="thanks-text"></p>
+          <button class="btn btn-outline" type="button" id="again" style="margin-top:1.5rem">Send another
+            message</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <p style="font-weight:500">Sahayak Studio. Powered by chai and a very patient spreadsheet.</p>
+      <p class="teal">This is a demo site. Forms and log in stay in your browser.</p>
+    </div>
+  </footer>
+
+  <dialog id="auth" class="card" aria-labelledby="auth-title">
+    <div class="inner">
+      <div class="dhead">
+        <h2 id="auth-title">Log in</h2><button class="x" type="button" id="auth-close" aria-label="Close">×</button>
+      </div>
+      <p class="dsub" id="auth-sub"></p>
+      <form id="auth-form" novalidate>
+        <div class="field" id="a-name-wrap" hidden><label for="a-name">Your name</label><input id="a-name"
+            autocomplete="name" maxlength="80" aria-describedby="a-name-err">
+          <p class="err" id="a-name-err"></p>
+        </div>
+        <div class="field"><label for="a-email">Email</label><input id="a-email" type="email" inputmode="email"
+            autocomplete="email" maxlength="255" aria-describedby="a-email-err">
+          <p class="err" id="a-email-err"></p>
+        </div>
+        <div class="field"><label for="a-password">Password</label><input id="a-password" type="password"
+            autocomplete="current-password" aria-describedby="a-password-err a-password-hint">
+          <p class="err" id="a-password-err"></p>
+          <p class="hint" id="a-password-hint">At least 8 characters.</p>
+        </div>
+        <button class="btn btn-lg full" type="submit" id="auth-submit">Log in</button>
+      </form>
+      <p class="switch"><span id="switch-text">New here?</span> <button class="btn-link" type="button"
+          id="auth-switch">Create an account</button></p>
+    </div>
+  </dialog>
+
+  <script>
+    /* ─────────────────────────────────────────────────────────────
+     *  PRICES — every number the site shows comes from this list.
+     *  Change a price here and the calculator, services list and
+     *  contact form all follow.
+     *
+     *  Résumé maker      3 packages: ₹399 / ₹699 / ₹999
+     *  Data entry        500–20,000 rows, ₹250 per 1,000 rows, minimum ₹300
+     *  Event website     1–10 pages, ₹4,999 + ₹1,000 per extra page
+     *  Event management  1–5 days, ₹12,000 per day
+     * ───────────────────────────────────────────────────────────── */
+    const PRICES = {
+      resume: {
+        packages: [
+          { name: "Fresh start", price: 399, days: 2, includes: "One-page résumé" },
+          { name: "Standard", price: 699, days: 3, includes: "Résumé and cover letter" },
+          { name: "Full kit", price: 999, days: 4, includes: "Résumé, cover letter and LinkedIn summary" }]
+      },
+      data: { minRows: 500, maxRows: 20000, stepRows: 500, perThousand: 250, minimum: 300, rowsPerDay: 2500 },
+      website: { minPages: 1, maxPages: 10, base: 4999, perExtraPage: 1000, baseDays: 5 },
+      events: { minDays: 1, maxDays: 5, perDay: 12000, leadWeeks: 3 },
+    };
+
+    const inr = n => "₹" + n.toLocaleString("en-IN");
+    const plural = (n, w) => n + " " + w + (n === 1 ? "" : "s");
+    const $ = id => document.getElementById(id);
+
+    /* Each service: tab label, slider settings, and how to price a slider value. */
+    const SERVICES = [
+      {
+        id: "resume", name: "Résumé maker", short: "Résumé",
+        listText: "We rewrite your résumé from your old one, your notes or a short call. You get a clean PDF and an editable Word file.",
+        listPrice: "from " + inr(PRICES.resume.packages[0].price),
+        label: "Package", min: 0, max: PRICES.resume.packages.length - 1, step: 1, value: 1,
+        quote(v) {
+          const p = PRICES.resume.packages[v];
+          return { price: p.price, eta: "Ready in about " + plural(p.days, "working day"), text: p.name, detail: p.includes };
+        }
+      },
+      {
+        id: "data", name: "Data entry", short: "Data entry",
+        listText: "Send us scans, PDFs, handwritten registers or photos, and we type them into a spreadsheet. Every batch is checked twice before it comes back.",
+        listPrice: inr(PRICES.data.perThousand) + " per 1,000 rows",
+        label: "Number of rows", min: PRICES.data.minRows, max: PRICES.data.maxRows, step: PRICES.data.stepRows, value: 2000,
+        quote(v) {
+          const d = PRICES.data;
+          const price = Math.max(d.minimum, Math.round(v / 1000 * d.perThousand));
+          return {
+            price, eta: "Ready in about " + plural(Math.max(1, Math.ceil(v / d.rowsPerDay)), "working day"),
+            text: v.toLocaleString("en-IN") + " rows", detail: inr(d.perThousand) + " per 1,000 rows, minimum " + inr(d.minimum)
+          };
+        }
+      },
+      {
+        id: "website", name: "Event website", short: "Event website",
+        listText: "A simple site for your wedding, reunion or conference, with schedule, venue map and RSVP form. We host it until a month after the event.",
+        listPrice: "from " + inr(PRICES.website.base),
+        label: "Number of pages", min: PRICES.website.minPages, max: PRICES.website.maxPages, step: 1, value: 3,
+        quote(v) {
+          const w = PRICES.website;
+          return {
+            price: w.base + (v - 1) * w.perExtraPage, eta: "Live in about " + plural(w.baseDays + v - 1, "working day"),
+            text: plural(v, "page"), detail: inr(w.base) + " for the first page, " + inr(w.perExtraPage) + " for each extra"
+          };
+        }
+      },
+      {
+        id: "events", name: "Event management", short: "Events",
+        listText: "One of us coordinates vendors, timings and guests on the day so you don't have to. Planning calls in the weeks before are included.",
+        listPrice: inr(PRICES.events.perDay) + " per day",
+        label: "Event days", min: PRICES.events.minDays, max: PRICES.events.maxDays, step: 1, value: 1,
+        quote(v) {
+          const e = PRICES.events;
+          return {
+            price: v * e.perDay, eta: "Book at least " + e.leadWeeks + " weeks ahead",
+            text: plural(v, "day"), detail: inr(e.perDay) + " per day, on-site coordinator included"
+          };
+        }
+      },
+    ];
+
+    /* ── Services list and contact dropdown ── */
+    for (const s of SERVICES) {
+      const li = document.createElement("li");
+      li.innerHTML = "<h3></h3><p></p><span class='cost'></span>";
+      li.querySelector("h3").textContent = s.name;
+      li.querySelector("p").textContent = s.listText;
+      li.querySelector(".cost").textContent = s.listPrice;
+      $("service-list").append(li);
+      $("c-service").append(new Option(s.name, s.id));
+    }
+
+    /* ── Calculator ── */
+    let current = SERVICES[0];
+    const slider = $("slider");
+
+    SERVICES.forEach((s, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "tab"; b.role = "tab"; b.id = "tab-" + s.id;
+      b.setAttribute("aria-controls", "calc-panel");
+      b.textContent = s.short;
+      b.addEventListener("click", () => selectTab(s));
+      b.addEventListener("keydown", e => {
+        const keys = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: SERVICES.length - 1 };
+        if (!(e.key in keys)) return;
+        e.preventDefault();
+        const next = SERVICES[(keys[e.key] + SERVICES.length) % SERVICES.length];
+        selectTab(next); $("tab-" + next.id).focus();
+      });
+      $("tabs").append(b);
+    });
+
+    function selectTab(s) {
+      current = s;
+      for (const t of SERVICES) {
+        const b = $("tab-" + t.id), on = t === s;
+        b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1;
+      }
+      $("calc-panel").setAttribute("aria-labelledby", "tab-" + s.id);
+      $("slider-label").textContent = s.label;
+      Object.assign(slider, { min: s.min, max: s.max, step: s.step });
+      slider.value = s.value;
+      $("ticks").innerHTML = "";
+      if (s.id === "resume") for (const p of PRICES.resume.packages) {
+        const span = document.createElement("span"); span.textContent = inr(p.price); $("ticks").append(span);
+      }
+      render();
+    }
+
+    function render() {
+      const v = Number(slider.value);
+      current.value = v;
+      const q = current.quote(v);
+      $("slider-value").textContent = q.text;
+      slider.setAttribute("aria-valuetext", q.text);
+      $("detail").textContent = q.detail;
+      $("price").textContent = inr(q.price);
+      $("eta").textContent = q.eta;
+    }
+    slider.addEventListener("input", render);
+
+    $("ask").addEventListener("click", () => {
+      $("thanks").hidden = true; $("contact-form").hidden = false;
+      $("c-service").value = current.id;
+      $("contact").scrollIntoView({ block: "start" });
+      $("c-name").focus({ preventScroll: true });
+    });
+    selectTab(SERVICES[0]);
+
+    /* ── Validation helpers ── */
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const checkName = v => !v.trim() ? "Tell us your name." : v.trim().length > 80 ? "Please keep your name under 80 characters." : "";
+    const checkEmail = v => {
+      v = v.trim();
+      if (!v) return "Enter your email address.";
+      if (!EMAIL_RE.test(v)) return "That email doesn't look right. It should be like name@example.com.";
+      return "";
+    };
+    const checkPassword = v => !v ? "Enter a password." : v.length < 8 ? "Your password needs at least 8 characters. It has " + v.length + "." : "";
+
+    function showErrors(map) {
+      let first = null;
+      for (const [id, msg] of Object.entries(map)) {
+        $(id + "-err").textContent = msg;
+        $(id).setAttribute("aria-invalid", msg ? "true" : "false");
+        if (msg && !first) first = $(id);
+      }
+      if (first) first.focus();
+      return !first;
+    }
+
+    /* ── Contact form ── */
+    $("contact-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const d = $("c-details").value.trim();
+      const ok = showErrors({
+        "c-name": checkName($("c-name").value),
+        "c-email": checkEmail($("c-email").value),
+        "c-service": $("c-service").value ? "" : "Pick the service you're asking about.",
+        "c-details": d.length < 10 ? "Tell us a little more, at least 10 characters, so we can quote properly." : "",
+      });
+      if (!ok) return;
+      $("thanks-title").textContent = "Thanks, " + $("c-name").value.trim().split(" ")[0] + ".";
+      $("thanks-text").textContent = "We've got your message and will write back to " + $("c-email").value.trim() +
+        " within one working day. (This is a demo, so nothing was actually sent.)";
+      $("contact-form").hidden = true; $("thanks").hidden = false; $("thanks").focus();
+    });
+    $("again").addEventListener("click", () => {
+      $("c-details").value = ""; $("c-service").value = "";
+      $("thanks").hidden = true; $("contact-form").hidden = false; $("c-details").focus();
+    });
+
+    /* ── Log in / create account (name and email only, kept in this browser) ── */
+    const KEY = "sahayak-user";
+    const dialog = $("auth");
+    let mode = "login";
+
+    function readUser() { try { const u = JSON.parse(localStorage.getItem(KEY)); return u && u.name && u.email ? u : null; } catch { return null; } }
+    function saveUser(u) { try { localStorage.setItem(KEY, JSON.stringify({ name: u.name, email: u.email })); } catch { } }
+    function clearUser() { try { localStorage.removeItem(KEY); } catch { } }
+
+    function showUser(u) {
+      $("auth-out").hidden = !!u; $("auth-in").hidden = !u;
+      if (u) {
+        $("hi").textContent = "Hi, " + u.name;
+        if (!$("c-name").value) $("c-name").value = u.name;
+        if (!$("c-email").value) $("c-email").value = u.email;
+      }
+    }
+
+    function setMode(m) {
+      mode = m;
+      const signup = m === "signup";
+      $("auth-title").textContent = $("auth-submit").textContent = signup ? "Create account" : "Log in";
+      $("auth-sub").textContent = signup
+        ? "We only keep your name and email, in this browser. Your password is never saved."
+        : "Log in to see your name on the site. This is a demo, so nothing leaves your browser.";
+      $("a-name-wrap").hidden = !signup;
+      $("a-password").autocomplete = signup ? "new-password" : "current-password";
+      $("switch-text").textContent = signup ? "Already have an account?" : "New here?";
+      $("auth-switch").textContent = signup ? "Log in instead" : "Create an account";
+      for (const id of ["a-name", "a-email", "a-password"]) { $(id + "-err").textContent = ""; $(id).removeAttribute("aria-invalid"); }
+    }
+
+    $("open-login").addEventListener("click", () => { setMode("login"); dialog.showModal(); });
+    $("auth-close").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
+    $("auth-switch").addEventListener("click", () => setMode(mode === "login" ? "signup" : "login"));
+    $("logout").addEventListener("click", () => { clearUser(); showUser(null); $("open-login").focus(); });
+
+    $("auth-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const email = $("a-email").value.trim();
+      const errs = { "a-email": checkEmail(email), "a-password": checkPassword($("a-password").value) };
+      if (mode === "signup") errs["a-name"] = checkName($("a-name").value);
+      if (!showErrors(errs)) return;
+      const local = email.split("@")[0].split(/[._-]/)[0];
+      const name = mode === "signup" ? $("a-name").value.trim() : local.charAt(0).toUpperCase() + local.slice(1);
+      const user = { name, email };
+      saveUser(user); showUser(user);
+      $("a-password").value = "";
+      dialog.close();
+    });
+
+    showUser(readUser());
+  </script>
+</body>
+
+</html>
