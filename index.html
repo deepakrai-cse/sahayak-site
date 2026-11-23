@@ -999,7 +999,7 @@
      *  Change a price here and the calculator, services list and
      *  contact form all follow.
      *
-     *  Résumé maker      3 packages: ₹399 / ₹699 / ₹999
+     *  Resume maker      3 packages: ₹399 / ₹699 / ₹999
      *  Data entry        500–20,000 rows, ₹250 per 1,000 rows, minimum ₹300
      *  Event website     1–10 pages, ₹4,999 + ₹1,000 per extra page
      *  Event management  1–5 days, ₹12,000 per day
@@ -1007,9 +1007,9 @@
     const PRICES = {
       resume: {
         packages: [
-          { name: "Fresh start", price: 399, days: 2, includes: "One-page résumé" },
-          { name: "Standard", price: 699, days: 3, includes: "Résumé and cover letter" },
-          { name: "Full kit", price: 999, days: 4, includes: "Résumé, cover letter and LinkedIn summary" }]
+          { name: "Fresh start", price: 399, days: 2, includes: "One-page Resume" },
+          { name: "Standard", price: 699, days: 3, includes: "Resume and cover letter" },
+          { name: "Full kit", price: 999, days: 4, includes: "Resume, cover letter and LinkedIn summary" }]
       },
       data: { minRows: 500, maxRows: 20000, stepRows: 500, perThousand: 250, minimum: 300, rowsPerDay: 2500 },
       website: { minPages: 1, maxPages: 10, base: 4999, perExtraPage: 1000, baseDays: 5 },
@@ -1023,8 +1023,8 @@
     /* Each service: tab label, slider settings, and how to price a slider value. */
     const SERVICES = [
       {
-        id: "resume", name: "Résumé maker", short: "Résumé",
-        listText: "We rewrite your résumé from your old one, your notes or a short call. You get a clean PDF and an editable Word file.",
+        id: "resume", name: "Resume maker", short: "Resume",
+        listText: "We rewrite your Resume from your old one, your notes or a short call. You get a clean PDF and an editable Word file.",
         listPrice: "from " + inr(PRICES.resume.packages[0].price),
         label: "Package", min: 0, max: PRICES.resume.packages.length - 1, step: 1, value: 1,
         quote(v) {
